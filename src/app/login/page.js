@@ -19,7 +19,7 @@ export default function LoginPage() {
       // Store logged-in user's email in local storage
       localStorage.setItem('loggedInUser', JSON.stringify(user));
       // Redirect to the main page
-      router.push('/');
+      window.location.href = '/'; // <-- Change to this
     } else {
       setError('Invalid email or password.');
     }

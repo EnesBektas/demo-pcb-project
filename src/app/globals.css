@@ -523,7 +523,6 @@ body {
   transition: all 0.2s ease-in-out;
   width: 90px;
   
-  /* --- Add these lines --- */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1115,7 +1114,7 @@ input:checked + .slider:before {
 
 .quote-form-horizontal {
     display: flex;
-    align-items: flex-end; /* Aligns items to the bottom */
+    align-items: center; /* Vertically centers all items */
     gap: 20px;
     background-color: white;
     padding: 25px;
@@ -1148,7 +1147,7 @@ input:checked + .slider:before {
 .quote-form-horizontal .quote-button {
     height: 44px; /* Match height of inputs */
     margin: 0;
-    margin-bottom: 18px;
+    margin-bottom: 0;
     padding: 0 30px;
     white-space: nowrap; /* Prevent text wrapping */
 }
@@ -1158,4 +1157,139 @@ input:checked + .slider:before {
     height: 100%;
     width: 200px;
     flex-shrink: 0; /* Prevent it from shrinking */
+}
+
+/* --- MOBILE RESPONSIVE STYLES --- */
+
+/* For Tablets and Smaller Desktops */
+@media (max-width: 992px) {
+    .hero-slider-container {
+        height: 400px;
+    }
+
+    .quote-form-horizontal-container {
+        margin-top: -80px; /* Adjust overlap */
+        padding: 0 20px;
+    }
+
+    .quote-form-horizontal {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+
+    .quote-form-horizontal .file-upload-area {
+        width: 100%;
+    }
+    
+    .quote-form-horizontal .quote-button {
+        margin-bottom: 0;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr 1fr; /* 2 columns for footer */
+    }
+
+    .offer-item {
+        grid-template-columns: 1fr 1fr; /* 2 columns for offers */
+        gap: 20px;
+    }
+}
+
+/* For Small Tablets and Mobile Phones */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    /* Hide the main navigation links on mobile */
+    .nav-links {
+        display: none;
+    }
+
+    .hero-text-content h1,
+    .spec-options-column h1,
+    .offers-page-container h1,
+    .form-box h2 {
+        font-size: 1.8rem; /* Reduce all major headings */
+    }
+
+    /* Stack all multi-column content grids */
+    .features-grid,
+    .contact-grid,
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Stack the main columns on the spec page */
+    .spec-page-container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .spec-summary-column {
+        position: static; /* Disable sticky summary box */
+        margin-top: 20px;
+    }
+
+    /* Stack the label and options on the spec page */
+    .spec-option-group {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 15px 0;
+    }
+
+    .spec-option-group label {
+        padding-top: 0;
+    }
+    
+    .dimension-inputs input {
+        width: 100%;
+    }
+    
+    /* Stack the columns in the offer/order list */
+    .offer-item {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .offer-item-col .label {
+        margin-bottom: 5px;
+    }
+    
+    .modal-details-grid {
+        grid-template-columns: 1fr; /* Single column in modal */
+    }
+}
+
+/* For Small Mobile Phones */
+@media (max-width: 576px) {
+    .header {
+        padding: 10px 0;
+    }
+
+    .logo {
+        height: 40px;
+    }
+
+    .hero-slider-container {
+        height: 300px;
+    }
+
+    .quote-form-horizontal-container {
+        padding: 0 10px;
+    }
+
+    .quote-form-horizontal {
+        padding: 15px;
+    }
+
+    .features {
+        padding: 60px 0;
+    }
+    
+    .form-box {
+        padding: 25px;
+    }
 }
