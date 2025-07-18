@@ -105,7 +105,7 @@ export default function OrdersPage() {
                 <div className="offers-list">
                     {orders.map(order => (
                         // Updated grid to have 5 columns
-                        <div key={order.id} className="offer-item" style={{gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr'}} onClick={() => handleViewDetails(order)}>
+                        <div key={order.id} className="offer-item offer-item--five-columns" onClick={() => handleViewDetails(order)}>
                             <div className="offer-item-col">
                                 <p className="label">Order ID</p>
                                 <p>#{order.id}</p>

@@ -907,6 +907,10 @@ input:checked + .slider:before {
   transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
+.offer-item--five-columns {
+    grid-template-columns: repeat(5, 1fr);
+}
+
 .offer-item:hover {
   box-shadow: 0 4px 15px rgba(0,0,0,0.08);
   transform: translateY(-2px);
@@ -1088,9 +1092,10 @@ input:checked + .slider:before {
 
 .hero-slide {
     width: 100%;
-    height: 400px;
-    background-size: cover;
+    height: 100%;
+    background-size: cover; /* Changed from cover to contain */
     background-position: center;
+    background-repeat: no-repeat; /* Added to prevent tiling */
 }
 
 /* Customizing the Swiper pagination dots */
@@ -1164,11 +1169,11 @@ input:checked + .slider:before {
 /* For Tablets and Smaller Desktops */
 @media (max-width: 992px) {
     .hero-slider-container {
-        height: 400px;
+        height: 240px;
     }
 
     .quote-form-horizontal-container {
-        margin-top: -80px; /* Adjust overlap */
+        margin-top: -35px; /* Adjust overlap */
         padding: 0 20px;
     }
 
@@ -1249,9 +1254,10 @@ input:checked + .slider:before {
     
     /* Stack the columns in the offer/order list */
     .offer-item {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Stack into a single column */
         gap: 15px;
-        text-align: center;
+        text-align: left; /* Align text to the left */
+        padding: 15px;
     }
     
     .offer-item-col .label {
@@ -1274,10 +1280,11 @@ input:checked + .slider:before {
     }
 
     .hero-slider-container {
-        height: 300px;
+        height: 200px;
     }
 
     .quote-form-horizontal-container {
+        margin-top: -30px; /* Adjust overlap */
         padding: 0 10px;
     }
 
